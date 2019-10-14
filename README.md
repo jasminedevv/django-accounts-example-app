@@ -39,7 +39,7 @@ Add this to your main url dispatcher (the urls.py in your project's main app):
 from django.urls import include, path
 
 urlpatterns = [
-    path('accounts/', include('accounts.urls'),
+    path('accounts/', include('accounts.urls')),
 ]
 ```
 ### in terminal
@@ -55,3 +55,7 @@ To use the custom user model in other apps:
 from django.contrib.auth import get_user_model
 User = get_user_model()
 ```
+# Try it out
+This app only add __3 routes__: login, logout, and signup. Any other urls should either be handled by another app in your project or return a 404. Got to http://localhost:8000/accounts/signup/ to create an account, next go to http://localhost:8000/accounts/logout to test the logout functionality, then try signing in again at http://localhost:8000/accounts/login/.
+
+That's it! That's all it does.
