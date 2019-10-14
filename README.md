@@ -3,9 +3,6 @@ This is an example app that can be used in a Django project to handle authentica
 
 I created this with students in mind but more advanced devlelopers may find handy code snippets. It could also work as a hackathon starter.
 
-# How to add this app to your project
-NOTE: Project under construction
-
 ## Requirements
 1. A new (or new-ish) project
 2. Empty database (no existing users)
