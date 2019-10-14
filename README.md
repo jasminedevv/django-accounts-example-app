@@ -9,7 +9,8 @@ NOTE: Project under construction
 ## Steps
 Start by copying this app folder into the project root.
 
-Add 'accounts' to INSTALLED_APPS in settings.py:
+### in settings.py
+Add 'accounts' to INSTALLED_APPS:
 
 ```py
 INSTALLED_APPS = [
@@ -19,10 +20,11 @@ INSTALLED_APPS = [
 ]
 ```
 
-Next, add this to your main app settings:
+So Django uses the custom user model:
 ```py
 AUTH_USER_MODEL = 'yourapp.User'
 ```
+### in urls.py (main app)
 Add this to your main url dispatcher (the urls.py in your project's main app):
 ```py
 from django.urls import include, path
@@ -31,27 +33,15 @@ urlpatterns = [
     path('accounts/', include('accounts.urls'),
 ]
 ```
-
+### in other apps
 To use the custom user model in other apps:
 ```py
 from django.contrib.auth import get_user_model
 User = get_user_model()
 ```
-
+### in terminal
 Run:
 ```sh
 $ python manage.py makemigrations accounts && python manage.py migrate
 ```
 This command will not work (and probably break things) if you already have users in your database.
-
-## Troubleshooting
-### 1.TemplateDoesNotExist
-Either move `user_form.html` to wherever your other templates are (usually a folder called 'templates' in the project root) OR tell django to look for templates in app folders. Like this:
-```py
-# root settings.py
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-)
-```
-If that doesn't work make sure you added 'accounts' to your installed apps.
