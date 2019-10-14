@@ -7,7 +7,11 @@ NOTE: Project under construction
 3. Python 3
 
 ## Steps
-Start by copying this app folder into the project root.
+Start by copying this app folder into the project root. To create a new project from scratch try:
+```sh
+$ django-admin startproject
+```
+(will either need to have django installed globally or be in an active virtualenv with django installed)
 
 ### in settings.py
 Add 'accounts' to INSTALLED_APPS:
@@ -19,8 +23,7 @@ INSTALLED_APPS = [
     'accounts',
 ]
 ```
-
-So Django uses the custom user model:
+So Django uses the custom user model instead of the default one:
 ```py
 AUTH_USER_MODEL = 'yourapp.User'
 ```
