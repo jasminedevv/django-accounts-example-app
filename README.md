@@ -3,7 +3,7 @@
 
 This is an example app that can be used in a Django project to handle authentication and account creation for users. It contains a custom user model and a profile model which can be customized depending on your project's needs.
 
-I created this with students in mind but more advanced devlelopers may find handy code snippets. It could also work as a hackathon starter.
+I created this with students in mind but more advanced developers may find handy code snippets. It could also work as a hackathon starter.
 
 ## Requirements
 1. A new (or new-ish) project
