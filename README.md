@@ -1,7 +1,7 @@
 # Django Accounts Example
 [Read the accompanying article](https://medium.com/@jasmine.yhumbert/best-practices-for-starting-a-django-project-with-the-right-user-model-290a09452b88)
 
-This is an example app that can be used in a Django project to handle authentication and account creation for users. It contains a custom user model and a profile model which can be customized depending on your project's needs.
+This is an example app module that can be used in a Django project to handle authentication and account creation for users. It contains a custom user model and a profile model which can be customized depending on your project's needs.
 
 I created this with students in mind but more advanced developers may find handy code snippets. It could also work as a hackathon starter.
 
@@ -9,6 +9,15 @@ I created this with students in mind but more advanced developers may find handy
 1. A new (or new-ish) project
 2. Empty database (no existing users)
 3. Python 3
+
+# What it does
+This app only adds __3 routes__: login, logout, and signup. Any other urls should return a 404 (unless handled by other apps). 
+
+- Go to http://localhost:8000/accounts/signup/ to create an account, 
+- Go to http://localhost:8000/accounts/logout to test the logout functionality, 
+- Try signing in again at http://localhost:8000/accounts/login/.
+
+That's it! That's all it does.
 
 ## Steps
 Start by copying this app folder into the project root. To create a new project from scratch try:
@@ -57,11 +66,3 @@ To use the custom user model in other apps:
 from django.contrib.auth import get_user_model
 User = get_user_model()
 ```
-# Try it out
-This app only adds __3 routes__: login, logout, and signup. Any other urls should return a 404 (unless handled by other apps). 
-
-- Go to http://localhost:8000/accounts/signup/ to create an account, 
-- Go to http://localhost:8000/accounts/logout to test the logout functionality, 
-- Try signing in again at http://localhost:8000/accounts/login/.
-
-That's it! That's all it does.
